@@ -59,7 +59,7 @@ public class HocTapFragment extends Fragment {
 
         //Khởi tạo retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.16.69.208/challenges/")
+                .baseUrl("http://192.168.5.36/challenges/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
