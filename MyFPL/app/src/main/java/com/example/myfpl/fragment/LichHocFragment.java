@@ -52,7 +52,7 @@ public class LichHocFragment extends Fragment /**implements SearchableFragment**
 
         //Khởi tạo retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.31.170/challenges/")
+                .baseUrl("http://172.16.69.208/challenges/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
