@@ -10,10 +10,18 @@ public class NotificationDetail {
     @SerializedName("content")
     private String content;
 
-    public NotificationDetail(int id, String title, String content) {
+    @SerializedName("author")
+    private String author;
+
+    @SerializedName("date")
+    private String date;
+
+    public NotificationDetail(int id, String title, String content, String author, String date) {
         this.id = id;
         this.title = title;
         this.content = content;
+        this.author = author;
+        this.date = date;
     }
 
     public NotificationDetail() {
@@ -41,5 +49,21 @@ public class NotificationDetail {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

@@ -7,9 +7,7 @@
     android:background="#E6E6E6"
     android:orientation="vertical">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -23,15 +21,17 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="140dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="8dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
                     app:cardCornerRadius="20dp"
                     android:backgroundTint="#ECCFC6"
                     >
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
                         android:paddingTop="10dp"
+                        android:layout_gravity="center"
                         android:orientation="vertical">
                         <TextView
                             android:id="@+id/tvPhong"
@@ -55,27 +55,19 @@
 
                 <LinearLayout
                     android:layout_width="180dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="20dp"
-                        android:orientation="horizontal">
                         <TextView
+                            android:id="@+id/tvNgayHoc"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Mã môn:"
-                            android:textSize="18dp"/>
+                            android:text="06/02/2003"
+                            android:textSize="16dp"/>
 
-                        <TextView
-                            android:id="@+id/tvMaMon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" IT1"
-                            android:textSize="18dp"/>
-                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -86,14 +78,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Tên môn:"
-                            android:textSize="18dp"/>
+                            android:textSize="16dp"/>
 
                         <TextView
                             android:id="@+id/tvTenMon"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Android"
-                            android:textSize="18dp"/>
+                            android:textSize="16dp"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -101,13 +93,12 @@
                     android:id="@+id/imgShowDetail_lichhoc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/right"
+                    android:src="@drawable/keyboard_arrow_right"
                     android:layout_marginTop="45dp"
                     android:layout_marginLeft="15dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
-            android:layout_marginTop="95dp"
             android:id="@+id/cardview_lich_hoc"
             android:layout_width="match_parent"
             app:cardCornerRadius="20dp"
@@ -115,7 +106,7 @@
             <View
                 android:layout_width="300dp"
                 android:layout_marginLeft="42dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:layout_height="1dp"
                 android:background="#919191" />
 
@@ -129,25 +120,26 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
                     <LinearLayout
-                        android:layout_marginTop="50dp"
-                        android:layout_marginLeft="15dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:orientation="horizontal">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Ngày học: "
-                            android:textSize="18dp"/>
+                            android:text="Mã môn:"
+                            android:layout_gravity="center"
+                            android:textSize="16dp"/>
 
                         <TextView
-                            android:id="@+id/tvNgayHoc"
+                            android:id="@+id/tvMaMon"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="06/02/2003"
-                            android:textSize="18dp"/>
+                            android:text=" IT1"
+                            android:layout_gravity="center"
+                            android:textSize="16dp"/>
                     </LinearLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -156,30 +148,31 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
                     <LinearLayout
-                        android:layout_marginTop="50dp"
-                        android:layout_marginLeft="15dp"
+
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:orientation="horizontal"
                         >
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="GV: "
-                            android:textSize="18dp"/>
+                            android:layout_gravity="center"
+                            android:textSize="16dp"/>
 
                         <TextView
                             android:id="@+id/tvTenGiangVien"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Tùng"
-                            android:textSize="18dp"/>
+                            android:layout_gravity="center"
+                            android:textSize="16dp"/>
                     </LinearLayout>
                 </LinearLayout>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-    </FrameLayout>
+
 
 
 

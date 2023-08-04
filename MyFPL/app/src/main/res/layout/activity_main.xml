@@ -35,11 +35,11 @@
             app:mbn_backgroundBottomColor="#F26F27"
             app:mbn_circleColor="#F77D3B"
             app:mbn_countBackgroundColor="#ff6f00"
-            app:mbn_countTextColor="#ffffff"
+            app:mbn_countTextColor="#EAE9E9"
             app:mbn_defaultIconColor="#FFFFFF"
             app:mbn_rippleColor="#2FEFDCDC"
-            app:mbn_selectedIconColor="#D6C1C1"
-            app:mbn_shadowColor="#1f212121" />
+            app:mbn_selectedIconColor="#E8E8E8"
+            app:mbn_shadowColor="#EAE9E9" />
     </LinearLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

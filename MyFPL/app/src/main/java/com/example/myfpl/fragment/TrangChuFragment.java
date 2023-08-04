@@ -12,6 +12,8 @@ import android.widget.ViewFlipper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.bumptech.glide.Glide;
@@ -75,6 +77,12 @@ public class TrangChuFragment extends Fragment {
 
         viewFlipper.setInAnimation(slideIn);
         viewFlipper.setOutAnimation(slideOut);
+
+        ThongBaoFragment thongBaoFragment = new ThongBaoFragment();
+        FragmentManager fragmentManager = getChildFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayoutHT, thongBaoFragment);
+        fragmentTransaction.commit();
     }
 }
 

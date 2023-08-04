@@ -22,9 +22,9 @@
                 android:orientation="horizontal">
                 <androidx.cardview.widget.CardView
                     android:layout_width="140dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
+                    android:layout_height="90dp"
                     app:cardCornerRadius="20dp"
+                    android:layout_margin="5dp"
                     android:backgroundTint="#ECCFC6"
                     >
                     <LinearLayout
@@ -32,14 +32,15 @@
                         android:layout_height="match_parent"
                         android:paddingLeft="10dp"
                         android:paddingTop="10dp"
+                        android:gravity="center"
                         android:orientation="vertical">
+
                         <TextView
-                            android:id="@+id/tvLopThi"
+                            android:id="@+id/tvPhongThi"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Lớp :"
+                            android:text="Tùng"
                             android:textStyle="bold"
-                            android:layout_marginBottom="7dp"
                             android:textSize="16dp"/>
 
                         <TextView
@@ -47,6 +48,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Ca :"
+                            android:layout_marginTop="7dp"
                             android:textStyle="bold"
                             android:textSize="16dp"/>
                     </LinearLayout>
@@ -56,52 +58,31 @@
                 <LinearLayout
                     android:layout_width="180dp"
                     android:layout_height="match_parent"
+                    android:gravity="center"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tvNgayThi"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingTop="20dp"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Mã môn:"
-                            android:textSize="18dp"/>
+                        android:text="06/02/2003"
+                        android:textSize="16dp"/>
 
-                        <TextView
-                            android:id="@+id/tvMaMonThi"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" IT1"
-                            android:textSize="18dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Tên môn:"
-                            android:textSize="18dp"/>
 
                         <TextView
                             android:id="@+id/tvTenMonThi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Android"
-                            android:textSize="18dp"/>
-                    </LinearLayout>
+                            android:textSize="16dp"/>
+
 
                 </LinearLayout>
                 <ImageView
                     android:id="@+id/imgShowDetail_lichthi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/right"
+                    android:src="@drawable/keyboard_arrow_right"
                     android:layout_marginTop="45dp"
                     android:layout_marginLeft="15dp"/>
             </LinearLayout>
@@ -135,40 +116,24 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         >
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Ngày học: "
-                            android:textSize="18dp"/>
 
-                        <TextView
-                            android:id="@+id/tvNgayThi"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="06/02/2003"
-                            android:textSize="18dp"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_marginTop="5dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Đợt thi: "
-                            android:textSize="18dp"/>
 
                         <TextView
                             android:id="@+id/tvDotThi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="06/02/2003"
-                            android:textSize="18dp"/>
+                            android:textSize="16dp"/>
                     </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/tvMaMonThi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text=" IT1"
+                        android:textSize="16dp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -176,26 +141,15 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
-                    <LinearLayout
-                        android:layout_marginTop="50dp"
-                        android:layout_marginLeft="15dp"
+
+                    <TextView
+                        android:id="@+id/tvLopThi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Phòng: "
-                            android:textSize="18dp"/>
-
-                        <TextView
-                            android:id="@+id/tvPhongThi"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Tùng"
-                            android:textSize="18dp"/>
-                    </LinearLayout>
+                        android:text="Lớp :"
+                       android:layout_marginTop="50dp"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="16dp"/>
 
                     <LinearLayout
                         android:layout_marginTop="5dp"
@@ -208,14 +162,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="GV1: "
-                            android:textSize="18dp"/>
+                            android:textSize="16dp"/>
 
                         <TextView
                             android:id="@+id/tvGV1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Tùng"
-                            android:textSize="18dp"/>
+                            android:textSize="16dp"/>
                     </LinearLayout>
                 </LinearLayout>
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -63,7 +64,7 @@ public class HocTapFragment extends Fragment implements SearchableFragment {
         //Khởi tạo retrofit
         Retrofit retrofit = new Retrofit.Builder()
 
-                .baseUrl("http://192.168.5.35/challenges/notification/")
+                .baseUrl("http://192.168.31.170/challenges/notification/")
 
 
                 .addConverterFactory(GsonConverterFactory.create())
@@ -105,7 +106,7 @@ public class HocTapFragment extends Fragment implements SearchableFragment {
     private void showNotificationDetailDialog(Notification notification) {
         //khởi tạo retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.5.35/challenges/notification/")
+                .baseUrl("http://192.168.31.170/challenges/notification/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         //gọi API để lấy nội dung chi tiết thông báo
@@ -116,7 +117,8 @@ public class HocTapFragment extends Fragment implements SearchableFragment {
             public void onResponse(Call<NotificationDetail> call, Response<NotificationDetail> response) {
                 if (response.isSuccessful() && response.body() != null){
                     NotificationDetail notificationDetail = response.body();
-                    showDetailDialog(notificationDetail.getContent());
+                    showDetailDialog(notificationDetail.getContent(), notificationDetail.getTitle(),
+                            notificationDetail.getAuthor(), notificationDetail.getDate());
                 }else {
                     Toast.makeText(getContext(), "lỗi", Toast.LENGTH_SHORT).show();
                     //xử lý lỗi khi không lấy được dữ liệu từ API
@@ -130,14 +132,30 @@ public class HocTapFragment extends Fragment implements SearchableFragment {
         });
     }
 
-    private void showDetailDialog(String content) {
+    private void showDetailDialog(String content, String title, String author, String date) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("Nội dung chi tiết");
-        builder.setMessage(content);
+        LayoutInflater inflater = getLayoutInflater();
+        View view = inflater.inflate(R.layout.dialog_chitiet,null);
+        builder.setView(view);
+
+
+        TextView   tvTitle = view.findViewById(R.id.tvTitle);
+        TextView   tvAuthor = view.findViewById(R.id.tvAuthor);
+        TextView   tvDate = view.findViewById(R.id.tvDate);
+        TextView   tvContent = view.findViewById(R.id.tvConten);
+
+        tvContent.setText(content);
+        tvTitle.setText(title);
+        tvAuthor.setText(author);
+        tvDate.setText(date);
+
         builder.setPositiveButton("OK",null);
         AlertDialog alertDialog = builder.create();
+        alertDialog.setCancelable(false);
         alertDialog.show();
     }
+
+
 
     @Override
     public void performSearch(String query) {

@@ -41,10 +41,10 @@ public class LichThiAdapter extends RecyclerView.Adapter<LichThiAdapter.LichThiV
     public void onBindViewHolder(@NonNull LichThiViewHolder holder, int position) {
         LichThi lichThi = lichThiList.get(position);
         holder.tvLopThi.setText("Lớp: "+lichThi.getLop());
-        holder.tvPhongThi.setText(lichThi.getPhong());
-        holder.tvCaThi.setText("Ca: "+lichThi.getCa_thi());
+        holder.tvPhongThi.setText("Phòng: "+lichThi.getPhong());
+        holder.tvCaThi.setText(lichThi.getCa_thi());
         holder.tvNgayThi.setText(lichThi.getNgay());
-        holder.tvMaMonThi.setText(lichThi.getMa_mon());
+        holder.tvMaMonThi.setText("Mã môn: "+lichThi.getMa_mon());
         holder.tvTenMonThi.setText(lichThi.getTen_mon());
         holder.tvDotThi.setText(lichThi.getDot_thi());
         holder.tvGV1.setText(lichThi.getGv1());
@@ -78,12 +78,12 @@ public class LichThiAdapter extends RecyclerView.Adapter<LichThiAdapter.LichThiV
                 @Override
                 public void onClick(View v) {
                     if(!isShow){
-                        imgShow.setImageResource(R.drawable.down);
+                        imgShow.setImageResource(R.drawable.keyboard_arrow_down);
                         cardView.setVisibility(View.VISIBLE);
                         isShow=true;
                     }
                     else{
-                        imgShow.setImageResource(R.drawable.right);
+                        imgShow.setImageResource(R.drawable.keyboard_arrow_right);
                         cardView.setVisibility(View.GONE);
                         isShow=false;
                     }

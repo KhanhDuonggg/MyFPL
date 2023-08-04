@@ -32,14 +32,14 @@ public class LichHocAdapter extends RecyclerView.Adapter<LichHocAdapter.LichHocV
     @NonNull
     @Override
     public LichHocViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_lich_hoc,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_lich_hoctung,parent,false);
         return new LichHocViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull LichHocViewHolder holder, int position) {
         LichHoc lichHoc = lichHocs.get(position);
-        holder.tvPhong.setText(lichHoc.getPhong());
+        holder.tvPhong.setText("Phòng: "+lichHoc.getPhong());
         holder.tvCaHoc.setText(lichHoc.getCa_hoc());
         holder.tvNgayHoc.setText(lichHoc.getNgay());
         holder.tvMaMon.setText(lichHoc.getMa_mon());
@@ -72,12 +72,12 @@ public class LichHocAdapter extends RecyclerView.Adapter<LichHocAdapter.LichHocV
                 @Override
                 public void onClick(View v) {
                     if(!isShow){
-                        imgShow.setImageResource(R.drawable.down);
+                        imgShow.setImageResource(R.drawable.keyboard_arrow_down);
                         cardView.setVisibility(View.VISIBLE);
                         isShow=true;
                     }
                     else{
-                        imgShow.setImageResource(R.drawable.right);
+                        imgShow.setImageResource(R.drawable.keyboard_arrow_right);
                         cardView.setVisibility(View.GONE);
                         isShow=false;
                     }
