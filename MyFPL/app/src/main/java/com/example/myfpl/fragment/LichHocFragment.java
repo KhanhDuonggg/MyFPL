@@ -1,6 +1,7 @@
 package com.example.myfpl.fragment;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myfpl.ApiInterface;
 import com.example.myfpl.R;
+import com.example.myfpl.SearchableFragment;
 import com.example.myfpl.adapter.LichHocAdapter;
 import com.example.myfpl.model.LichHoc;
 
@@ -23,7 +25,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class LichHocFragment extends Fragment /**implements SearchableFragment**/ {
+public class LichHocFragment extends Fragment implements SearchableFragment {
 
     private RecyclerView rcvLichHoc;
     private LichHocAdapter lichHocAdapter;
@@ -52,7 +54,11 @@ public class LichHocFragment extends Fragment /**implements SearchableFragment**
 
         //Khởi tạo retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.31.170/challenges/")
+<<<<<<< HEAD
+                .baseUrl("http://192.168.5.35/challenges/lich_hoc/")
+=======
+                .baseUrl("http://172.16.69.208/challenges/")
+>>>>>>> 43bae7d16c0b637d3017c4705929d9a3f0c2d608
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -80,24 +86,25 @@ public class LichHocFragment extends Fragment /**implements SearchableFragment**
         return rootView;
     }
 
-//    @Override
-//    public void performSearch(String query) {
-//        if (TextUtils.isEmpty(query)){
-//            filteredListLichHoc.addAll(lichHocList);
-//        }else {
-//            //duyệt ds lịch học và thêm vào filteredListLichHoc các lịch học phù hợp với từ khoá
-//            for (LichHoc lichHoc : lichHocList){
-//                if (lichHoc.getPhong().toLowerCase().contains(query.toLowerCase())
-//                        || lichHoc.getCa_hoc().toLowerCase().contains(query.toLowerCase())
-//                        || lichHoc.getNgay().toLowerCase().contains(query.toLowerCase())
-//                        || lichHoc.getMa_mon().toLowerCase().contains(query.toLowerCase())
-//                        || lichHoc.getTen_mon().toLowerCase().contains(query.toLowerCase())
-//                        || lichHoc.getTen_giang_vien().toLowerCase().contains(query.toLowerCase())){
-//                    filteredListLichHoc.add(lichHoc);
-//                }
-//            }
-//        }
-//        lichHocAdapter.updateDataLichHoc(filteredListLichHoc);
-//        lichHocAdapter.notifyDataSetChanged();
-//    }
+    @Override
+    public void performSearch(String query) {
+        if (TextUtils.isEmpty(query)){
+            filteredListLichHoc.addAll(lichHocList);
+        }else {
+            filteredListLichHoc.clear();
+            //duyệt ds lịch học và thêm vào filteredListLichHoc các lịch học phù hợp với từ khoá
+            for (LichHoc lichHoc : lichHocList){
+                if (lichHoc.getPhong().toLowerCase().contains(query.toLowerCase())
+                        || lichHoc.getCa_hoc().toLowerCase().contains(query.toLowerCase())
+                        || lichHoc.getNgay().toLowerCase().contains(query.toLowerCase())
+                        || lichHoc.getMa_mon().toLowerCase().contains(query.toLowerCase())
+                        || lichHoc.getTen_mon().toLowerCase().contains(query.toLowerCase())
+                        || lichHoc.getTen_giang_vien().toLowerCase().contains(query.toLowerCase())){
+                    filteredListLichHoc.add(lichHoc);
+                }
+            }
+        }
+        lichHocAdapter.updateDataLichHoc(filteredListLichHoc);
+        lichHocAdapter.notifyDataSetChanged();
+    }
 }

@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myfpl.ApiInterface;
 import com.example.myfpl.R;
+import com.example.myfpl.SearchableFragment;
 import com.example.myfpl.adapter.NotificationAdapter;
 import com.example.myfpl.model.Notification;
 import com.example.myfpl.model.NotificationDetail;
@@ -30,17 +31,19 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class HocTapFragment extends Fragment {
+public class HocTapFragment extends Fragment implements SearchableFragment {
 
     private RecyclerView rcvNotification;
     private NotificationAdapter notificationAdapter;
     private List<Notification> notificationList;
 
+    private List<Notification> filteredList;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Khởi tạo danh sách thông báo và danh sách kết quả tìm kiếm
         notificationList = new ArrayList<>();
+        filteredList = new ArrayList<>();
         //Khởi tạo notificationAdapter và đưa danh sách ban đầu vào RecyclerView
         notificationAdapter = new NotificationAdapter(notificationList);
     }
@@ -59,7 +62,11 @@ public class HocTapFragment extends Fragment {
 
         //Khởi tạo retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.31.170/challenges/")
+<<<<<<< HEAD
+                .baseUrl("http://192.168.5.35/challenges/notification/")
+=======
+                .baseUrl("http://172.16.69.208/challenges/")
+>>>>>>> 43bae7d16c0b637d3017c4705929d9a3f0c2d608
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -99,7 +106,7 @@ public class HocTapFragment extends Fragment {
     private void showNotificationDetailDialog(Notification notification) {
         //khởi tạo retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.31.170/challenges/")
+                .baseUrl("http://192.168.5.35/challenges/notification/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         //gọi API để lấy nội dung chi tiết thông báo
@@ -133,6 +140,20 @@ public class HocTapFragment extends Fragment {
         alertDialog.show();
     }
 
-
+    @Override
+    public void performSearch(String query) {
+        filteredList.clear();
+        //duyệt ds thông báo và thêm vào filteredList các thông báo phù hợp với từ khoá search
+        for (Notification notification : notificationList){
+            if (notification.getTitle().toLowerCase().contains(query.toLowerCase())
+                    || notification.getAuthor().toLowerCase().contains(query.toLowerCase())
+                    || notification.getDate().toLowerCase().contains(query.toLowerCase())
+                    || notification.getContent().toLowerCase().contains(query.toLowerCase())){
+                filteredList.add(notification);
+            }
+        }
+        notificationAdapter.updateData(filteredList);
+        notificationAdapter.notifyDataSetChanged();
+    }
 }
 
