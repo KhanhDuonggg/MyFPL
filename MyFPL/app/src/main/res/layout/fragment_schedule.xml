@@ -12,6 +12,6 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-       tools:listitem="@layout/item_lich_hoc"/>
+       tools:listitem="@layout/item_lich_hoctung"/>
 
 </FrameLayout>
