@@ -33,7 +33,7 @@
         android:text="Email"
         android:layout_gravity="center"
         android:textColor="@color/black"
-        android:layout_marginBottom="50dp"
+
         android:textSize="16sp" />
 
     <androidx.cardview.widget.CardView
@@ -75,7 +75,7 @@
                         android:layout_weight="7"
                         android:layout_gravity="center"
                         android:text="Hồ sơ cá nhân"
-                        android:textSize="18dp"/>
+                        android:textSize="16dp"/>
 
                     <TextView
                         android:layout_width="0dp"
@@ -115,7 +115,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="7"
                         android:text="Tiện ích"
-                        android:textSize="18dp" />
+                        android:textSize="16dp" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -155,7 +155,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="7"
                         android:text="Cài đặt"
-                        android:textSize="18dp" />
+                        android:textSize="16dp" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -170,6 +170,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
@@ -195,7 +196,7 @@
                         android:layout_gravity="center"
                         android:layout_weight="7"
                         android:text="Đăng xuất"
-                        android:textSize="18dp" />
+                        android:textSize="16dp" />
 
                     <TextView
                         android:layout_width="0dp"

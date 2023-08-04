@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myfpl.ApiInterface;
 import com.example.myfpl.R;
+import com.example.myfpl.SearchableFragment;
 import com.example.myfpl.adapter.NotificationAdapter;
 import com.example.myfpl.model.Notification;
 import com.example.myfpl.model.NotificationDetail;
@@ -32,7 +33,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LichFragment extends Fragment implements View.OnClickListener{
 
-
+    private SearchableFragment currentFragment;
     TextView item1, item2, select;
 
     @Nullable
@@ -69,7 +70,7 @@ public class LichFragment extends Fragment implements View.OnClickListener{
             select.animate().x(0).setDuration(500);
 
         }else {
-            fragment = new HoatDongFragment();
+            fragment = new ScoreFragment();
             int size = item2.getWidth();
             select.animate().x(size).setDuration(500);
         }

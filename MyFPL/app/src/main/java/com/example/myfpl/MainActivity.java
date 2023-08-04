@@ -1,12 +1,18 @@
 package com.example.myfpl;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.myfpl.fragment.ChatFragment;
@@ -14,6 +20,7 @@ import com.example.myfpl.fragment.DisplayQRContentFragment;
 import com.example.myfpl.fragment.LichFragment;
 import com.example.myfpl.fragment.TaiKhoanFragment;
 import com.example.myfpl.fragment.ThongBaoFragment;
+import com.example.myfpl.fragment.TrangChuFragment;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -22,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     private MeowBottomNavigation bottomNavigation;
+
+    private SearchableFragment currentFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +41,14 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        toolbar.setTitle("Trang chủ");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Trang chủ");
         bottomNavigation.show(1, true);
-        ThongBaoFragment thongBaoFragment = new ThongBaoFragment();
+       // ThongBaoFragment thongBaoFragment = new ThongBaoFragment();
+        TrangChuFragment trangChuFragment = new TrangChuFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, thongBaoFragment);
+        fragmentTransaction.replace(R.id.frameLayout, trangChuFragment);
         fragmentTransaction.commit();
 
         bottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.home));
@@ -54,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 switch (model.getId()){
                     case 1:
                         toolbar.setTitle("Trang chủ");
-                        fragment = new ThongBaoFragment();
+                       fragment = new TrangChuFragment();
+                     //   fragment = new ThongBaoFragment();
                         break;
 
                     case 2:
@@ -77,8 +89,16 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
 
+                if (fragment instanceof SearchableFragment){
+                    currentFragment = (SearchableFragment) fragment;
+                }else {
+                    currentFragment = null;
+                }
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frameLayout,fragment).commit();
+
+
+
                 return null;
             }
         });
@@ -127,5 +147,35 @@ public class MainActivity extends AppCompatActivity {
                 return null;
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu to add items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_toolbar,menu);
+
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        MenuItem searchMenuItem = menu.findItem(R.id.actionSearch);
+        SearchView searchView = (SearchView) searchMenuItem.getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
+        //Lắng nghe sự kiện tìm kiếm và gửi yêu cầu tìm kiếm đến Fragment đang hiển thị
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                if (currentFragment != null){
+                    currentFragment.performSearch(query);
+                }
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                //không làm gì khi người dùng thay đổi nội dung
+                return false;
+            }
+        });
+        return true;
     }
 }
