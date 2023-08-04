@@ -17,8 +17,9 @@
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#4DFFC107"
+            android:background="#ff6f00"
             android:fitsSystemWindows="true"
+            app:titleTextColor="#ffff"
             app:title="@null"/>
         <FrameLayout
             android:id="@+id/frameLayout"

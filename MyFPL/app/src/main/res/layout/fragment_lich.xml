@@ -2,13 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2196F3"
+    android:background="#EAE9E9"
     android:orientation="vertical"
     android:id="@+id/fragment_lich">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvNotification"
+    <include layout="@layout/contain_main"/>
+
+    <FrameLayout
+        android:id="@+id/frameLayout_LH"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 
 </LinearLayout>

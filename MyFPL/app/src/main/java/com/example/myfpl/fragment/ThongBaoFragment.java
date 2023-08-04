@@ -19,7 +19,6 @@ import com.example.myfpl.R;
 
 public class ThongBaoFragment extends Fragment implements View.OnClickListener{
 
-    ColorStateList colorStateList;
     TextView item1, item2, select;
     @Nullable
     @Override
@@ -29,6 +28,9 @@ public class ThongBaoFragment extends Fragment implements View.OnClickListener{
 
         item1 = view.findViewById(R.id.item1);
         item2 = view.findViewById(R.id.item2);
+
+        item1.setText("Học tập");
+        item2.setText("Hoạt động");
 
         item1.setOnClickListener(this);
         item2.setOnClickListener(this);

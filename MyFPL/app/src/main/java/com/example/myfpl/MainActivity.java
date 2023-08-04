@@ -10,8 +10,8 @@ import android.os.Bundle;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.myfpl.fragment.ChatFragment;
+import com.example.myfpl.fragment.DisplayQRContentFragment;
 import com.example.myfpl.fragment.LichFragment;
-import com.example.myfpl.fragment.QRFragment;
 import com.example.myfpl.fragment.TaiKhoanFragment;
 import com.example.myfpl.fragment.ThongBaoFragment;
 
@@ -64,12 +64,12 @@ public class MainActivity extends AppCompatActivity {
 
                     case 3:
                         toolbar.setTitle("QR Scan");
-                        fragment = new QRFragment();
+                        fragment = new DisplayQRContentFragment();
                         break;
                     case 4:
                         toolbar.setTitle("Trò chuyện");
                         fragment = new ChatFragment();
-                    break;
+                        break;
 
                     case 5:
                         toolbar.setTitle("Tài khoản");

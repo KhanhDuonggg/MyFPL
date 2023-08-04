@@ -1,5 +1,6 @@
 package com.example.myfpl;
 
+import com.example.myfpl.model.LichHoc;
 import com.example.myfpl.model.Notification;
 import com.example.myfpl.model.NotificationDetail;
 
@@ -19,5 +20,6 @@ public interface ApiInterface {
     @GET("get_notification_detail.php")
     Call<NotificationDetail> getNotificationDetail(@Query("notification_id") int notificationId);
 
-
+    @GET("get_lich_hoc.php")
+    Call<List<LichHoc>> getLichHoc();
 }
