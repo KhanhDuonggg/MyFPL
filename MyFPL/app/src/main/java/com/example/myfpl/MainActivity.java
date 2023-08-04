@@ -1,5 +1,6 @@
 package com.example.myfpl;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
@@ -19,6 +20,7 @@ import com.example.myfpl.fragment.DisplayQRContentFragment;
 import com.example.myfpl.fragment.LichFragment;
 import com.example.myfpl.fragment.TaiKhoanFragment;
 import com.example.myfpl.fragment.ThongBaoFragment;
+import com.example.myfpl.fragment.TrangChuFragment;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -39,12 +41,14 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        toolbar.setTitle("Trang chủ");
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Trang chủ");
         bottomNavigation.show(1, true);
-        ThongBaoFragment thongBaoFragment = new ThongBaoFragment();
+       // ThongBaoFragment thongBaoFragment = new ThongBaoFragment();
+        TrangChuFragment trangChuFragment = new TrangChuFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, thongBaoFragment);
+        fragmentTransaction.replace(R.id.frameLayout, trangChuFragment);
         fragmentTransaction.commit();
 
         bottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.home));
@@ -61,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 switch (model.getId()){
                     case 1:
                         toolbar.setTitle("Trang chủ");
-                        fragment = new ThongBaoFragment();
+                       fragment = new TrangChuFragment();
+                     //   fragment = new ThongBaoFragment();
                         break;
 
                     case 2:
