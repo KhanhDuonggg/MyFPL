@@ -6,13 +6,16 @@
     android:layout_height="match_parent"
     android:padding="20dp"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:background="@drawable/backgroundlogin"
+
+    >
 
     <ImageView
-        android:layout_width="240dp"
-        android:layout_height="384dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/ong_fpl" />
+        app:srcCompat="@drawable/nhanlogo" />
     <Button
         android:id="@+id/edtCoSoSelect"
         android:layout_width="339dp"
@@ -20,7 +23,7 @@
         android:text="chọn cơ sở đào tạo"
         android:textSize="18dp"
         android:textAllCaps="true"
-        android:backgroundTint="#F26F27"
+        android:backgroundTint="#C8975A3A"
         android:layout_gravity="center"/>
 
     <Button
@@ -30,9 +33,24 @@
         android:text="đăng nhập với google"
         android:textSize="18dp"
         android:textAllCaps="true"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#F26F27"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#C8975A3A"
         android:layout_gravity="center"/>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Or"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:gravity="center"-->
+<!--        android:padding="15dp"-->
+<!--        />-->
+<!--    <ImageView-->
+<!--        android:padding="20dp"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/group3"-->
+<!--        />-->
 <!--    <EditText-->
 <!--        android:id="@+id/edtCoSoSelect"-->
 <!--        android:layout_width="300dp"-->
