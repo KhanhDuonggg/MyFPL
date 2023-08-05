@@ -55,10 +55,10 @@ public class TrangChuFragment extends Fragment {
 
     private  void BannerFliper(){
         ArrayList<String> list = new ArrayList<>();
-        list.add("https://sanfulou.com/wp-content/uploads/2018/01/18-2-Copy-1024x683.jpg");
-        list.add("https://sanfulou.com/wp-content/uploads/2018/01/DSC6633-Copy-1024x683.jpg");
-        list.add("https://sanfulou.com/wp-content/uploads/2018/01/DSC08880-Copy-1024x683.jpg");
-        list.add("https://sanfulou.com/wp-content/uploads/2018/01/CVP08895-Edit-Copy.jpg");
+        list.add("https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/277779143_3114317295448256_2446305358192948538_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8631f5&_nc_ohc=SshYgLxrYYYAX8TuhPS&_nc_ht=scontent.fsgn2-7.fna&oh=00_AfBOlsFFkS_6yTpbNmHcZIhCxYpIUJuMC9mc70E8vbrdpw&oe=64D1D617");
+        list.add("https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/362673342_768486631950705_5815616646323454831_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=HH_rNompseUAX80nfB2&_nc_ht=scontent.fsgn2-7.fna&oh=00_AfAiKp4ReAqIYPPbjZL5xLcQdrpq_-TsTim4fhIXssu5BQ&oe=64D3091E");
+        list.add("https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/301628773_195416636168484_3681579572725010941_n.png?_nc_cat=103&ccb=1-7&_nc_sid=e3f864&_nc_ohc=4ZW9f5b-FdoAX9KSkjV&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfDYhWGHqSjIRs09PxdCs2xIfR3irf-7NXI1dC3D7rvJ1A&oe=64D15775");
+        list.add("https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/301772883_195549102821904_6169508124093322401_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=SizfYY46u-0AX_Qh0MP&_nc_oc=AQnzELEFXaDBU0sAVy1hmPmb8fOF_c7-52HeawDayJ2l8enyRvENlkJw1ckuzmbhwKk&_nc_ht=scontent.fsgn2-7.fna&oh=00_AfBtltevekMcmrZPLl-_MQkngdah_Agsk3p5ZFlzOZIbGA&oe=64D31D38");
 
 
 

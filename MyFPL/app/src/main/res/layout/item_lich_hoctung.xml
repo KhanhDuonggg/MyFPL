@@ -74,11 +74,6 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
                         android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Tên môn:"
-                            android:textSize="16dp"/>
 
                         <TextView
                             android:id="@+id/tvTenMon"
@@ -102,6 +97,7 @@
             android:id="@+id/cardview_lich_hoc"
             android:layout_width="match_parent"
             app:cardCornerRadius="20dp"
+            android:layout_marginTop="-20dp"
             android:layout_height="90dp">
             <View
                 android:layout_width="300dp"
