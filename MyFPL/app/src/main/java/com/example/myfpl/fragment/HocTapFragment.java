@@ -64,7 +64,7 @@ public class HocTapFragment extends Fragment implements SearchableFragment {
         //Khởi tạo retrofit
         Retrofit retrofit = new Retrofit.Builder()
 
-                .baseUrl("http://172.16.106.98/challenges/notification/")
+                .baseUrl("http://192.168.31.170/challenges/notification/")
 
 
                 .addConverterFactory(GsonConverterFactory.create())
@@ -106,7 +106,7 @@ public class HocTapFragment extends Fragment implements SearchableFragment {
     private void showNotificationDetailDialog(Notification notification) {
         //khởi tạo retrofit
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.16.106.98/challenges/notification/")
+                .baseUrl("http://192.168.31.170/challenges/notification/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         //gọi API để lấy nội dung chi tiết thông báo

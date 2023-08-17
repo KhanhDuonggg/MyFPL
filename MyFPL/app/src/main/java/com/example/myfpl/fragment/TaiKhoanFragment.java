@@ -37,6 +37,7 @@ public class TaiKhoanFragment extends Fragment {
         ImageView imgProfile = view.findViewById(R.id.imgProfileNav);
         TextView tvNameProfile = view.findViewById(R.id.tvNameProfileNav);
         TextView tvEmailProfile = view.findViewById(R.id.tvEmailProfileNav);
+        TextView tvlogout = view.findViewById(R.id.LinearLogout);
        // CardView btnlogout = view.findViewById(R.id.logout);
 
         sharedPreferences = getActivity().getSharedPreferences("userdata",MODE_PRIVATE);
@@ -48,17 +49,16 @@ public class TaiKhoanFragment extends Fragment {
         tvNameProfile.setText(nameProfile);
         tvEmailProfile.setText(emailProfile);
 
-//        btnlogout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                SharedPreferences.Editor editor = getActivity().getSharedPreferences("userdata",MODE_PRIVATE).edit();
-//                        editor.clear();
-//                        editor.apply();
-
-//                    mGoogleSignInClient.signOut();
-//                Intent intent = new Intent(getContext(), LoginActivity.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//                startActivity(intent);
+        tvlogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences.Editor editor = getActivity().getSharedPreferences("userdata",MODE_PRIVATE).edit();
+                        editor.clear();
+                        editor.apply();
+               
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
 //                mGoogleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
 //                    @Override
 //                    public void onComplete(@NonNull Task<Void> task) {
@@ -71,8 +71,8 @@ public class TaiKhoanFragment extends Fragment {
 //                        startActivity(intent);
 //                    }
 //                });
-//            }
-//        });
-        return view;
+            }
+        });
+       return view;
     }
 }
